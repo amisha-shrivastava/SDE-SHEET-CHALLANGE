@@ -1,0 +1,32 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+from typing import List
+
+def setZeros(matrix: List[List[int]]) -> None:
+    r = 0
+    c = 0
+    for i in matrix:
+        r+=1
+        c= len(i)
+    for j in range(r):
+        for k in range(c):
+            if(matrix[j][k]==0):
+                for l in range(c):
+                    if (matrix[j][l]!=0):
+                        matrix[j][l]='x'
+                for m in range(r):
+                    if (matrix[m][k]!=0):
+                        matrix[m][k]='x'
+                
+            else:
+                continue  
+    
+    for a in range(r):
+        for b in range(c):
+            if(matrix[a][b]=='x'):
+                matrix[a][b] = 0
+
+                
