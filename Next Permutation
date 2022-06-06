@@ -1,0 +1,18 @@
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        perm = list(sorted(set(permutations(nums))))
+        
+        for i in range(len(perm)):
+             if list(perm[i]) == nums:
+                nums.clear()
+                if perm[i]==max(perm):
+                    for i in list(perm[0]):
+                        nums.append(i)
+                else:
+                    for i in list(perm[i+1]):
+                        nums.append(i)
+                break
